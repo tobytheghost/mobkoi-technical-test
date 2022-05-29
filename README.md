@@ -3,7 +3,7 @@
 A technical test for Mobkoi.
 
 ## How to run
-**Will need to create a `.env` file using the `.env.example` file as basis and include:**
+**For server, create a `.env` file using the `.env.example` file as basis in the same location and include:**
 - the API key 
 - 3rd party AdServer API base URL
 
