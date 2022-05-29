@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Mobkoi Technical Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A technical test for Mobkoi.
 
-## Available Scripts
+## App
 
-In the project directory, you can run:
+### How to run
+From root folder `npm start`
 
-### `npm start`
+### Tests
+From root folder `npm run test`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Server
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### How to run
+From `server` folder `npm start`
 
-### `npm test`
+### Tests
+From `server` folder `npm run test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Description of test below:
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Full-Stack Test Task
+Since we're an advertising company this task is about managing advertising campaigns (in a very simplified way).
+Our goal is to see how you decide to implement the features, what design choices you made and why. Don't make it
+complicated, but do be prepared to talk about what you did and how it might work in production. Consider things like
+performance, resource usage, scalability and security. What could you improve upon (and how)?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+But above all, first make it work. Then make it better.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# What you need to implement
+There are 4 things you need to implement:
 
-### `npm run eject`
+- A page to add new campaigns (with at least 1 unit test)
+- A page to show the status of existing campaigns
+- A /api/add-campaign endpoint (with at least 1 unit test) which your page above calls
+- A /api/get-campaigns endpoint which your page above calls
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+So you need to do some front-end UI code, some back-end API code, and your API will in turn call our 
+AdServer API as detailed below.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Implement it however you like, using whatever frameworks you like; single or multi-page. This is your chance to flex.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Note - we must be able to run this locally (ie. no Heroku etc)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# AdServer API
+The 3rd party AdServer API is available at the following URL endpoint (this is the _prefix_):
 
-## Learn More
+    https://esobbc6302.execute-api.eu-west-1.amazonaws.com/default
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You must authenticate by passing a unique API key which will have been given to you as part of the test.
+To pass this to the API add a header *X-API-Key* with the value of the key you were given.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+These are the API methods available:
 
-### Code Splitting
+### Get all campaigns
+GET /campaigns/*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Returns an array of campaign details as JSON.
 
-### Analyzing the Bundle Size
+eg. GET https://esobbc6302.execute-api.eu-west-1.amazonaws.com/default/campaigns/*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Get a specific campaign
+GET /campaigns/{id} where id is the id of campaign (string)
 
-### Making a Progressive Web App
+Returns the campaign details as JSON.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Add a campaign
+POST x-www-form-urlencoded data to /campaigns with the following fields:
 
-### Advanced Configuration
+- id = a unique id for the campaign (string)
+- startDate = start date for the campaign as UTC milliseconds (int)
+- endDate = end date for the campaign as UTC milliseconds (int)
+- targetImpressions = total number of ad impressions you want delivered (int)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Returns the id of the campaign as JSON if created successfully.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Questions
+Feel free to ask any questions you like. Collaboration is good.
