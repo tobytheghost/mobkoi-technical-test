@@ -12,6 +12,8 @@ From root folder `npm run test`
 
 ### Server
 
+**Will need to create a `.env` file using the `.env.example` file as basis and include the API key and 3rd party AdServer API base URL**
+
 #### How to run
 From `server` folder `npm start`
 
