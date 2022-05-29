@@ -1,0 +1,49 @@
+.campaigns {
+  text-align: left;
+}
+
+.table {
+  width: 100%;
+}
+
+.thead {
+  border-bottom: 1px solid red;
+}
+
+.form {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.label {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 700;
+  input {
+    padding: 10px 5px;
+    width: 100%;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid grey
+  }
+}
+
+.error {
+  border-radius: 4px;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #c0392b;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.message {
+  border-radius: 4px;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
