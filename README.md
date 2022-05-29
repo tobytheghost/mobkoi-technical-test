@@ -2,23 +2,22 @@
 
 A technical test for Mobkoi.
 
-## App
+### App
 
-### How to run
+#### How to run
 From root folder `npm start`
 
-### Tests
+#### Tests
 From root folder `npm run test`
 
-## Server
+### Server
 
-### How to run
+#### How to run
 From `server` folder `npm start`
 
-### Tests
+#### Tests
 From `server` folder `npm run test`
 
-Description of test below:
 
 ---
 
