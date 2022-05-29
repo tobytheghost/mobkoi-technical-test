@@ -2,22 +2,23 @@
 
 A technical test for Mobkoi.
 
-### App
+## How to run
+**Will need to create a `.env` file using the `.env.example` file as basis and include:**
+- the API key 
+- 3rd party AdServer API base URL
 
-#### How to run
+### App
 From root folder `npm start`
 
-#### Tests
+### Server
+From `server` folder `npm start`
+
+## Tests
+
+### App
 From root folder `npm run test`
 
 ### Server
-
-**Will need to create a `.env` file using the `.env.example` file as basis and include the API key and 3rd party AdServer API base URL**
-
-#### How to run
-From `server` folder `npm start`
-
-#### Tests
 From `server` folder `npm run test`
 
 
